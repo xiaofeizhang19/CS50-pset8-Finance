@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Symbol</th>
+      <th>Shares</th>
+      <th>Price</th>
+      <th>Total</th>
+    </tr>
+    {% for name, symbol, total_shares, price_per_share, total_price in table_contents %}
+      <tr>
+        <td>{{ name }}</td>
+        <td>{{ symbol }}</td>
+        <td>{{ total_shares }}</td>
+        <td>{{ price_per_share }}</td>
+        <td>{{ total_price }}</td>
+      </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="4"></td>
+        <td>{{ cash_in_account }}</td>
+      </tr>
+     <tr>
+        <td colspan="4"></td>
+        <td>{{ balance }}</td>
+      </tr>
+  </table>
+{% endblock %}
